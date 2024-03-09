@@ -17,4 +17,5 @@ link : https://www.youtube.com/watch?v=LwwWc7eoLk4
 - create an account and log in
 - Create JIRA Cloud Token : https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/
 ``` ATATT3xFfGF0vqcZvBURliFRkD2kPTKX7mq2myxnKq8N7gDhKtqle1MpCAGdWJQ4YBbHVwc-l3___vpBsoHDzVM4UxH19tjYC3fg63l6gRWvhzo8crgLwgYuK_GMMOVoNY81Nuh4Kp8QpqC7bUEsKmoL3FRnW4RCHK81yJvRZAAEMnPiEQ4_tVE=5796E447 ```
-- How to integrate with Jenkins : https://www.youtube.com/watch?v=-KrlCWVPfJM
+- Add a comment to an issue : https://www.youtube.com/watch?v=-KrlCWVPfJM
+- Tag an issue with job build link : https://www.youtube.com/watch?v=zFy9hM5uRjw
