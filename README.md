@@ -24,4 +24,5 @@ link : https://www.youtube.com/watch?v=LwwWc7eoLk4
 - How to Setup Docker Containers As Build Agents for Jenkins : https://www.youtube.com/watch?v=ymI02j-hqpU
 - github repo : https://github.com/aymendr/jenkins-example-docker
 - Install **Docker pipeline** plugin
+- Install Docker Desktop on your machine: https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module&_gl=1*s1o9kg*_ga*Njk0NjA2ODA0LjE3MDUzNDAwMTk.*_ga_XJWPQMJYHQ*MTcwOTM3MDQ0OS4xNC4xLjE3MDkzNzA0NTIuNTcuMC4w
 - 
