@@ -19,3 +19,8 @@ link : https://www.youtube.com/watch?v=LwwWc7eoLk4
 ``` ATATT3xFfGF0vqcZvBURliFRkD2kPTKX7mq2myxnKq8N7gDhKtqle1MpCAGdWJQ4YBbHVwc-l3___vpBsoHDzVM4UxH19tjYC3fg63l6gRWvhzo8crgLwgYuK_GMMOVoNY81Nuh4Kp8QpqC7bUEsKmoL3FRnW4RCHK81yJvRZAAEMnPiEQ4_tVE=5796E447 ```
 - Add a comment to an issue : https://www.youtube.com/watch?v=-KrlCWVPfJM / in pipeline syntax --> Sample step --> JIRA comment
 - Tag an issue with job build link : https://www.youtube.com/watch?v=zFy9hM5uRjw /  Job configuration  --> post-build actions --> Issue selector : Explicit selector --> jira issue ID
+
+## Docker as Agent
+- How to Setup Docker Containers As Build Agents for Jenkins : https://www.youtube.com/watch?v=ymI02j-hqpU
+- github repo : https://github.com/darinpope/jenkins-example-docker/tree/main
+- Install ** Docker pipeline ** plugin 
