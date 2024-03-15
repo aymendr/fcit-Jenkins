@@ -30,3 +30,23 @@ link : https://www.youtube.com/watch?v=LwwWc7eoLk4
 - Install the "Publish Over SSH" plugin https://plugins.jenkins.io/publish-over-ssh/
 - Configure the server connection : Manage jenkins --> System --> SSH Servers --> fill in Name, Hostname (ip), username (with wich you will connect to server), Advanced --> Tick the option : **Use password authentication, or use a different key** --> give username password
 - In Job configuration, addd build step **Send files or execute commands over SSH** --> choose server name --> Source files wil contain regex expressions (current dir is the root dir for a maven project) exp: target/*.jar --> Remove prefix : target (to not create the folder target)
+
+## Install jenkins as Docker container
+- url : https://www.jenkins.io/doc/book/installing/docker/
+- Create a Dockerfile with the following content:
+``` FROM jenkins/jenkins:2.440.1-jdk17
+USER root
+RUN apt-get update && apt-get install -y lsb-release
+RUN curl -fsSLo /usr/share/keyrings/docker-archive-keyring.asc \
+  https://download.docker.com/linux/debian/gpg
+RUN echo "deb [arch=$(dpkg --print-architecture) \
+  signed-by=/usr/share/keyrings/docker-archive-keyring.asc] \
+  https://download.docker.com/linux/debian \
+  $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
+RUN apt-get update && apt-get install -y docker-ce-cli
+USER jenkins
+RUN jenkins-plugin-cli --plugins "blueocean docker-workflow" ```
+
+- Build a new docker image from this Dockerfile, and assign the image a meaningful name, such as "myjenkins-blueocean:2.440.1-1":
+
+```docker build -t myjenkins-blueocean:2.440.1-1 .```
