@@ -48,5 +48,4 @@ USER jenkins
 RUN jenkins-plugin-cli --plugins "blueocean docker-workflow" ```
 
 - Build a new docker image from this Dockerfile, and assign the image a meaningful name, such as "myjenkins-blueocean:2.440.1-1":
-
-```docker build -t myjenkins-blueocean:2.440.1-1 .```
+``` docker build -t myjenkins-blueocean:2.440.1-1 . ```
