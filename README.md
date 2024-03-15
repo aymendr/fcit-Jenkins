@@ -26,3 +26,7 @@ link : https://www.youtube.com/watch?v=LwwWc7eoLk4
 - Install **Docker pipeline** plugin
 - Install Docker Desktop on your machine: https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module&_gl=1*s1o9kg*_ga*Njk0NjA2ODA0LjE3MDUzNDAwMTk.*_ga_XJWPQMJYHQ*MTcwOTM3MDQ0OS4xNC4xLjE3MDkzNzA0NTIuNTcuMC4w
 - 
+## Deploy artifacts to destinations through Jenkins
+- Install the "Publish Over SSH" plugin https://plugins.jenkins.io/publish-over-ssh/
+- Configure the server connection : Manage jenkins --> System --> SSH Servers --> fill in Name, Hostname (ip), username (with wich you will connect to server), Advanced --> Tick the option : **Use password authentication, or use a different key** --> give username password
+- In Job configuration, addd build step **Send files or execute commands over SSH** --> choose server name --> Source files wil contain regex expressions (current dir is the root dir for a maven project) exp: target/*.jar --> Remove prefix : target (to not create the folder target)
