@@ -34,3 +34,4 @@ link : https://www.youtube.com/watch?v=LwwWc7eoLk4
 ## Install jenkins as Docker container
 - Install Docker on Centos9: https://docs.docker.com/engine/install/centos/
 - Permission denied error --> Add user to docker group : ``` sudo usermod -aG docker aymen ```
+- Start Jenkins as docker container : https://github.com/jenkinsci/docker/blob/master/README.md
