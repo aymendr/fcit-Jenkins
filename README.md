@@ -35,3 +35,7 @@ link : https://www.youtube.com/watch?v=LwwWc7eoLk4
 - Install Docker on Centos9: https://docs.docker.com/engine/install/centos/
 - Permission denied error --> Add user to docker group : ``` sudo usermod -aG docker aymen ```
 - Start Jenkins as docker container : https://github.com/jenkinsci/docker/blob/master/README.md
+- Start Jenkins with docker in detached mode with volume ``` docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 --restart=on-failure jenkins/jenkins:lts-jdk17 ```
+- Enter jenkins container ``` docker exec -it <container_id> bash ```
+- display init password ``` cat /var/jenkins_home/secrets/initialAdminPassword ```
+- 
