@@ -32,20 +32,5 @@ link : https://www.youtube.com/watch?v=LwwWc7eoLk4
 - In Job configuration, addd build step **Send files or execute commands over SSH** --> choose server name --> Source files wil contain regex expressions (current dir is the root dir for a maven project) exp: target/*.jar --> Remove prefix : target (to not create the folder target)
 
 ## Install jenkins as Docker container
-- url : https://www.jenkins.io/doc/book/installing/docker/
-- Create a Dockerfile with the following content:
-``` FROM jenkins/jenkins:2.440.1-jdk17
-USER root
-RUN apt-get update && apt-get install -y lsb-release
-RUN curl -fsSLo /usr/share/keyrings/docker-archive-keyring.asc \
-  https://download.docker.com/linux/debian/gpg
-RUN echo "deb [arch=$(dpkg --print-architecture) \
-  signed-by=/usr/share/keyrings/docker-archive-keyring.asc] \
-  https://download.docker.com/linux/debian \
-  $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
-RUN apt-get update && apt-get install -y docker-ce-cli
-USER jenkins
-RUN jenkins-plugin-cli --plugins "blueocean docker-workflow" ```
-
-- Build a new docker image from this Dockerfile, and assign the image a meaningful name, such as "myjenkins-blueocean:2.440.1-1":
-``` docker build -t myjenkins-blueocean:2.440.1-1 . ```
+- Install Docker on Centos9: https://docs.docker.com/engine/install/centos/
+- Permission denied error --> Add user to docker group : ``` sudo usermod -aG docker aymen ```
