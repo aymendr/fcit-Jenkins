@@ -54,6 +54,5 @@ link : https://www.youtube.com/watch?v=LwwWc7eoLk4
 
 - Build second job and check if first job is build
 - Configure Job > Triggers > Triggers build remotely > fill in Authentication Token > save
-![Uploading image.png…]()
-
+![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/338fc54f-2b1c-4cc5-8f32-b62cfb814ba7)
 - Access url : http://localhost:8080/job/job1/build?token=1234 > check if job1 is triggered
