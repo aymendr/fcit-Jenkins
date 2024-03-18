@@ -32,4 +32,8 @@ link : https://www.youtube.com/watch?v=LwwWc7eoLk4
 - Start Jenkins with docker in detached mode with volume ``` docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 --restart=on-failure jenkins/jenkins:lts-jdk17 ```
 - Enter jenkins container ``` docker exec -it <container_id> bash ```
 - display init password ``` cat /var/jenkins_home/secrets/initialAdminPassword ```
-- 
+
+## Roles and users
+- Install **Role-based Authorization Strategy** plugin : https://plugins.jenkins.io/role-strategy/
+- ![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/51bfb04c-85a9-44cc-b4e4-1995df89aa39)
+ 
