@@ -74,11 +74,15 @@ H/15 * * * *
 ## Repo Git et build
 - url : https://github.com/aymendr/jenkins-helloworld.git
 script :
-```git clone https://github.com/aymendr/jenkins-helloworld.git
+```
+git clone https://github.com/aymendr/jenkins-helloworld.git
 cd jenkins-helloworld
 javac Main.java
-java Main```
+java Main
+```
 
 - En utilisant le plugin git :
-```javac Main.java
-java Main ```
+```
+javac Main.java
+java Main 
+```
