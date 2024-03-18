@@ -89,10 +89,12 @@ java Main
 ## Git Push Tags
 - Configure git repo with credentials (username/password with token in password)
 - create shell script :
-```git config --global user.email "driraaymen@gmail.com"
+```
+git config --global user.email "driraaymen@gmail.com"
 git config --global user.name "aymen"
 javac Main.java
-java Main```
+java Main
+```
 - configure Post-build **Git Publisher** Action
 ![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/2869da49-60a3-4ee2-8e44-e3e7cdcbdbed)
 
