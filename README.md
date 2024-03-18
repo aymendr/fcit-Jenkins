@@ -94,4 +94,5 @@ git config --global user.name "aymen"
 javac Main.java
 java Main```
 - configure Post-build **Git Publisher** Action
-![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/f14959b4-f1bd-46db-858c-f18f80764e7d)
+![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/2869da49-60a3-4ee2-8e44-e3e7cdcbdbed)
+
