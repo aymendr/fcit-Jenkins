@@ -68,3 +68,5 @@ H/15 * * * *
 - Configure Job > General > This project is parameterized > password > fill in with parameter name and value
 - To display, add a build step > execute a bat script on windows > ```echo %<var_name>%``` | for linux ```echo $<var_name>```
 - add password parameter or boolean or a list by choosing **Choice Parameter** or **File Parameter** to upload a file for the build 
+## Exercice d'application
+- créer 3 jobs dépendant les uns des autres, un pour builder un hello world en java, le deuxième pour un run et redirection du résultat vers un fichier .txt et un troisième pour tester le résultat en utilisant la commande grep
