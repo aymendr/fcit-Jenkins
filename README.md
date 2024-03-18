@@ -70,3 +70,15 @@ H/15 * * * *
 - add password parameter or boolean or a list by choosing **Choice Parameter** or **File Parameter** to upload a file for the build 
 ## Exercice d'application
 - créer 3 jobs dépendant les uns des autres, un pour builder un hello world en java, le deuxième pour un run et redirection du résultat vers un fichier .txt et un troisième pour tester le résultat en utilisant la commande grep
+
+## Repo Git et build
+- url : https://github.com/aymendr/jenkins-helloworld.git
+script :
+```git clone https://github.com/aymendr/jenkins-helloworld.git
+cd jenkins-helloworld
+javac Main.java
+java Main```
+
+- En utilisant le plugin git :
+```javac Main.java
+java Main ```
