@@ -46,3 +46,5 @@ link : https://www.youtube.com/watch?v=LwwWc7eoLk4
 - Go to manage Jenkins > Manage and Assign Roles > Manage Roles > Add item roles with patterns
 ![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/79eef35d-eb76-41a4-8e8e-b5ca11836aea)
 - Switch to Assign Roles > Item roles > add users to job roles with templates and save
+![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/8ced744b-0515-4e86-869a-dcdf7d4ca6b3)
+
