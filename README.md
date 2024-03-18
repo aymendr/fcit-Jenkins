@@ -48,3 +48,12 @@ link : https://www.youtube.com/watch?v=LwwWc7eoLk4
 - Switch to Assign Roles > Item roles > add users to job roles with templates and save
 ![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/8ced744b-0515-4e86-869a-dcdf7d4ca6b3)
 
+## Trigger & Remote url
+- Configure Job > Triggers > Build after other projects are built > fill in with job name
+![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/41516181-1164-489b-ab21-9c688adb084a)
+
+- Build second job and check if first job is build
+- Configure Job > Triggers > Triggers build remotely > fill in Authentication Token > save
+![Uploading image.png…]()
+
+- Access url : http://localhost:8080/job/job1/build?token=1234 > check if job1 is triggered
