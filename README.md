@@ -97,4 +97,6 @@ java Main
 ```
 - configure Post-build **Git Publisher** Action
 ![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/2869da49-60a3-4ee2-8e44-e3e7cdcbdbed)
+- Configure branch to push to when build done
+![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/756f4c42-02f4-4a64-8b3e-31b5ba491750)
 
