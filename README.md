@@ -35,5 +35,5 @@ link : https://www.youtube.com/watch?v=LwwWc7eoLk4
 
 ## Roles and users
 - Install **Role-based Authorization Strategy** plugin : https://plugins.jenkins.io/role-strategy/
-- ![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/51bfb04c-85a9-44cc-b4e4-1995df89aa39)
+![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/51bfb04c-85a9-44cc-b4e4-1995df89aa39)
  
