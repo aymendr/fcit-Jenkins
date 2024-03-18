@@ -58,7 +58,12 @@ link : https://www.youtube.com/watch?v=LwwWc7eoLk4
 - Access url : http://localhost:8080/job/job1/build?token=1234 > check if job1 is triggered
 
 ## Planifications & Crons
+![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/5b2fea38-b9dd-4d34-9512-129270ac8a9b)
 MINUTE HOUR DOM MONTH DOW
 Exp : 
 Every fifteen minutes (perhaps at :07, :22, :37, :52):
 H/15 * * * *
+
+## Paramètres et jobs
+- Configure Job > General > This project is parameterized > password > fill in with parameter name and value
+- To display, add a build step > execute a bat script on windows > ```echo %<var_name>%``` | for linux ```echo $<var_name>```
