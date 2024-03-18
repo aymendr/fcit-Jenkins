@@ -56,3 +56,9 @@ link : https://www.youtube.com/watch?v=LwwWc7eoLk4
 - Configure Job > Triggers > Triggers build remotely > fill in Authentication Token > save
 ![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/338fc54f-2b1c-4cc5-8f32-b62cfb814ba7)
 - Access url : http://localhost:8080/job/job1/build?token=1234 > check if job1 is triggered
+
+## Planifications & Crons
+MINUTE HOUR DOM MONTH DOW
+Exp : 
+Every fifteen minutes (perhaps at :07, :22, :37, :52):
+H/15 * * * *
