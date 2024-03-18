@@ -67,3 +67,4 @@ H/15 * * * *
 ## Paramètres et jobs
 - Configure Job > General > This project is parameterized > password > fill in with parameter name and value
 - To display, add a build step > execute a bat script on windows > ```echo %<var_name>%``` | for linux ```echo $<var_name>```
+- add password parameter or boolean or a list by choosing **Choice Parameter** or **File Parameter** to upload a file for the build 
