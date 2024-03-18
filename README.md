@@ -34,6 +34,15 @@ link : https://www.youtube.com/watch?v=LwwWc7eoLk4
 - display init password ``` cat /var/jenkins_home/secrets/initialAdminPassword ```
 
 ## Roles and users
+- Go to manage Jenkins > Users > Add new users 
 - Install **Role-based Authorization Strategy** plugin : https://plugins.jenkins.io/role-strategy/
 ![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/51bfb04c-85a9-44cc-b4e4-1995df89aa39)
- 
+- Go to manage Jenkins > Security > Authorization > Role-Based Strategy
+![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/cf5222e7-1267-4273-9956-cbc76e6c64a4)
+- Go to manage Jenkins > Manage and Assign Roles > Manage Roles
+- Add a global role **dev** and tick **Overall > Read** permission and save
+- Switch to Assign Roles > add users to new global group to give them read permissions
+### filtering roles by jobs template
+- Go to manage Jenkins > Manage and Assign Roles > Manage Roles > Add item roles with patterns
+![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/79eef35d-eb76-41a4-8e8e-b5ca11836aea)
+- Switch to Assign Roles > Item roles > add users to job roles with templates and save
