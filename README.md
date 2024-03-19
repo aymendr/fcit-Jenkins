@@ -1,9 +1,11 @@
 # fcit-Jenkins
 ## Install Jenkins on ubuntu 22.04
+Ref : https://www.cherryservers.com/blog/how-to-install-jenkins-on-ubuntu-22-04
 ### Install Java
 - Let’s install OpenJDK 11, which is an open-source Java Platform. Use the following command to continue:
 - Documentation : https://www.jenkins.io/doc/book/installing/linux/
 ```sudo apt install openjdk-11-jdk```
+### Install Jenkins
 - Long Term Support release :
 ```
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
@@ -13,6 +15,24 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
   /etc/apt/sources.list.d/jenkins.list > /dev/null
 sudo apt-get update
 sudo apt-get install jenkins
+```
+### Start Jenkins
+- You can start Jenkins by running the following systemctl command:
+```sudo systemctl start Jenkins```
+- Use the systemctl status command to verify that Jenkins started successfully.
+```sudo systemctl status Jenkins```
+### Setup Jenkins
+- To set up Jenkins, go to your browser and open http://localhost:8080 where Jenkins server is running.
+- The Unlock Jenkins screen will appear, asking for the administrator password.
+- Open a new tab in the terminal and run the command below to get the initial credential to unlock Jenkins.
+```sudo cat /var/lib/jenkins/secrets/initialAdminPassword```
+### Configure Firewall
+- Jenkins is configured to run on port 8080 by default, so you should open that port by using ufw.
+```sudo ufw allow 8080```
+- Run the commands below to allow ssh and enable ufw:
+```
+sudo ufw allow ssh
+sudo ufw enable
 ```
 ## Jenkins CLI
 link : https://www.youtube.com/watch?v=LwwWc7eoLk4
