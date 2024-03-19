@@ -104,3 +104,31 @@ java Main
 - Install the plugin **Pipeline Delivery**
 - Create new View > Delivery Pipeline View
 - Configure the view and add the components
+
+## Pipeline Syntax
+### Pipeline declaratif
+- create new pipeline job and paste the following groovy code:
+```
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone') {
+            steps {
+                sh 'rm -rf *'
+                sh 'git clone https://github.com/aymendr/jenkins-helloworld.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'cd jenkins-helloworld && javac Main.java'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'cd jenkins-helloworld && java Main'
+            }
+        }
+    }
+}
+```
