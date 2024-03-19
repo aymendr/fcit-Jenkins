@@ -193,3 +193,22 @@ copy pipeline code in a Jenkinsfile file and commit this file on your github rep
 link : https://docs.docker.com/engine/install/ubuntu/
 ### Setup pipeline with docker agent
 - Install **Docker Pipeline** plugin
+- Add jenkins user to docker group to allow docker commands: ```sudo usermod -aG docker jenkins```
+- create pipeline job and put the following declarative script:
+```
+pipeline {
+    agent {
+        docker { 
+            image 'nginx:latest' 
+            args '-p 80:80'
+        }
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'cat /etc/nginx/conf.d/default.conf'
+            }
+        }
+    }
+}
+```
