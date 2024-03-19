@@ -188,3 +188,8 @@ copy pipeline code in a Jenkinsfile file and commit this file on your github rep
 - create a pipeline job and use **Pipeline Script from SCM**
 ![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/ebff6d0a-8e68-4b60-b7c6-0f03b41f536b)
 
+## Docker Agent on Jenkins
+### Install Docker
+link : https://docs.docker.com/engine/install/ubuntu/
+### Setup pipeline with docker agent
+- Install **Docker Pipeline** plugin
