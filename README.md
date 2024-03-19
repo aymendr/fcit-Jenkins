@@ -137,10 +137,20 @@ pipeline {
 - create new pipeline job and paste the following scripted code:
 ```
 node {
-    stage('build and run') {
+    stage('Clone') {
         git branch: 'main', url: 'https://github.com/aymendr/jenkins-helloworld.git'
+    }
+    stage('Build') {
         sh 'javac Main.java'
+    }
+    stage('Test') {
         sh 'java Main'
     }
 }
 ```
+
+## Jenkinsfile
+copy pipeline code in a Jenkinsfile file and commit this file on your github repo
+- create a pipeline job and use **Pipeline Script from SCM**
+![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/ebff6d0a-8e68-4b60-b7c6-0f03b41f536b)
+
