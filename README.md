@@ -2,6 +2,7 @@
 ## Install Jenkins on ubuntu 22.04
 ### Install Java
 - Let’s install OpenJDK 11, which is an open-source Java Platform. Use the following command to continue:
+- Documentation : https://www.jenkins.io/doc/book/installing/linux/
 ```sudo apt install openjdk-11-jdk```
 - Long Term Support release :
 ```
