@@ -100,3 +100,7 @@ java Main
 - Configure branch to push to when build done
 ![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/756f4c42-02f4-4a64-8b3e-31b5ba491750)
 
+## Pipeline Delivery Plugin
+- Install the plugin **Pipeline Delivery**
+- Create new View > Delivery Pipeline View
+- Configure the view and add the components
