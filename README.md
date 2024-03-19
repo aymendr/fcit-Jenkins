@@ -1,5 +1,18 @@
 # fcit-Jenkins
-
+## Install Jenkins on ubuntu 22.04
+### Install Java
+- Let’s install OpenJDK 11, which is an open-source Java Platform. Use the following command to continue:
+```sudo apt install openjdk-11-jdk```
+- Long Term Support release :
+```
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
+```
 ## Jenkins CLI
 link : https://www.youtube.com/watch?v=LwwWc7eoLk4
 - go to Manage Jenkins --> Jenkins CLI
