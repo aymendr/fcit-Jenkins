@@ -132,3 +132,15 @@ pipeline {
     }
 }
 ```
+
+### Pipeline scripté
+- create new pipeline job and paste the following scripted code:
+```
+node {
+    stage('build and run') {
+        git branch: 'main', url: 'https://github.com/aymendr/jenkins-helloworld.git'
+        sh 'javac Main.java'
+        sh 'java Main'
+    }
+}
+```
