@@ -212,3 +212,14 @@ pipeline {
     }
 }
 ```
+- create pipeline job and put the following scripted pipeline:
+```
+node {
+    stage('Show running docker containers') {
+        docker.image('nginx:latest').withRun('-p 80:80') {
+            sh 'docker ps'
+            sh 'curl localhost'
+        }
+    }
+}
+```
