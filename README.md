@@ -1,4 +1,16 @@
 # fcit-Jenkins
+## Install Jenkins on Centos 9
+- get Jenkins official repository
+``` curl https://pkg.jenkins.io/redhat-stable/jenkins.repo > /etc/yum.repos.d/jenkins.repo ```
+- get GPG key and install Jenkins
+``` rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key ```
+- install jenkins
+``` dnf -y install jenkins ```
+- If Firewalld is running, allow service ports.
+```
+firewall-cmd --add-port=8080/tcp --permanent
+firewall-cmd --reload
+```
 ## Install Jenkins on ubuntu 22.04
 Ref : https://www.cherryservers.com/blog/how-to-install-jenkins-on-ubuntu-22-04
 ### Install Java
