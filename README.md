@@ -241,6 +241,7 @@ repo url : https://github.com/aymendr/jenkins-build-docker/tree/master
 
 ## Push Docker Image to registry
 - create a pipeline and paste the following script:
+- create **gitlab_credentials** (username/password) to use it int the pipeline
 ```
 node{
     stage('Clone') {
