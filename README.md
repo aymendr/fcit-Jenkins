@@ -275,8 +275,11 @@ node{
     stage('Clone') {
         git 'https://github.com/aymendr/war-build-docker.git'
     }
+    
     stage('Maven package'){
-        sh 'mvn clean package'
+        withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'maven', mavenSettingsConfig: '', traceability: true) {
+            sh 'mvn clean package'
+        }
     }
 
     def img = stage('Build image') {
@@ -301,3 +304,6 @@ node{
     }
 }
 ```
+- To build maven project configure the maven installation in the jenkins > manage > Tools
+- Install **Pipeline Maven Integration Plugin**
+- use Pipeline Syntax > withMaven to figureout how to call maven commands
