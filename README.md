@@ -238,3 +238,29 @@ node {
 ```
 ### Setup pipeline with docker agent with Jenkinsfile
 repo url : https://github.com/aymendr/jenkins-build-docker/tree/master
+
+## Push Docker Image to registry
+- create a pipeline and paste the following script:
+```
+node{
+    stage('Clone') {
+        git 'https://github.com/aymendr/jenkins-build-docker.git'
+    }
+
+    def img = stage('Build image') {
+        docker.build("registry.gitlab.com/driraaymen/presentation_jenkins:nginx-$BUILD_ID")
+    }
+    
+    stage('Test'){
+        img.withRun("--name nginx-$BUILD_ID -p 80:80"){
+            sh 'curl localhost'
+        }
+    }
+    
+    stage('Build - Push') {
+        docker.withRegistry('https://registry.gitlab.com', 'gitlab_credentials') {
+            img.push()
+        }        
+    }
+}
+```
