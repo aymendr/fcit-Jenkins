@@ -236,3 +236,5 @@ node {
     }
 }
 ```
+### Setup pipeline with docker agent with Jenkinsfile
+repo url : https://github.com/aymendr/jenkins-build-docker/tree/master
