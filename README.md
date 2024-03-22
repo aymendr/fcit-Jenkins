@@ -206,6 +206,7 @@ link : https://docs.docker.com/engine/install/ubuntu/
 ### Setup pipeline with docker agent
 - Install **Docker Pipeline** plugin
 - Add jenkins user to docker group to allow docker commands: ```sudo usermod -aG docker jenkins```
+- Restart Jenkins
 - create pipeline job and put the following declarative script:
 ```
 pipeline {
