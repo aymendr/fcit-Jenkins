@@ -265,3 +265,39 @@ node{
     }
 }
 ```
+## WarTest
+- Repo to clone : https://github.com/aymendr/war-build-docker.git
+pipeline code :
+```
+node{
+    def registryProject='registry.gitlab.com/driraaymen/presentation_jenkins'
+    def IMAGE="${registryProject}:warTest-$BUILD_ID"
+    stage('Clone') {
+        git 'https://github.com/aymendr/war-build-docker.git'
+    }
+    stage('Maven package'){
+        sh 'mvn clean package'
+    }
+
+    def img = stage('Build image') {
+        docker.build("$IMAGE")
+    }
+    
+    stage('Test'){
+        img.withRun("--name run-$BUILD_ID -p 8081:8080"){
+            sh 'docker ps'
+            sh 'netstat -ntaup'
+            sh 'sleep 30s'
+            sh 'curl localhost:8081'
+            sh 'docker ps'
+        }
+    }
+    
+    stage('Build - Push') {
+        docker.withRegistry('https://registry.gitlab.com', 'gitlab_credentials') {
+            img.push 'latest'
+            img.push()
+        }        
+    }
+}
+```
