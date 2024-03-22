@@ -307,3 +307,8 @@ node{
 - To build maven project configure the maven installation in the jenkins > manage > Tools
 - Install **Pipeline Maven Integration Plugin**
 - use Pipeline Syntax > withMaven to figureout how to call maven commands
+# Index
+- To delete all containers including its volumes:
+```docker rm -vf $(docker ps -aq)```
+- To delete all the images:
+```docker rmi -f $(docker images -aq)```
