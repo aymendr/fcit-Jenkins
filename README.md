@@ -312,6 +312,7 @@ node{
 - To delete all the images:
 ```docker rmi -f $(docker images -aq)```
 ## Add SSH agent to Jenkins
+- ref : https://www.youtube.com/watch?v=Se7JtzFVZGE
 - Install **SSH Agent** plugin
 - Manage Jenkins > Nodes > New Node
 ![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/ac70d215-69bc-4c05-8dd7-682d8817c99c)
