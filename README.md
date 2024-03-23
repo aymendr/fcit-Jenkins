@@ -331,7 +331,7 @@ node{
 - create a pipeline put the code below:
 ```
 pipeline {
-    **agent { label 'dev'}**
+    agent { label 'dev'}
     stages {
         stage('Hello') {
             steps {
