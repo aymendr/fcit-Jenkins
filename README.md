@@ -327,3 +327,17 @@ node{
 - choose for **Host Key Verification Strategy** > Non verifying Verification Strategy
 - Save
 - Click on Relaunch agent to get the agent connected
+### Run Job pipeline on a remote agent
+- create a pipeline put the code below:
+```
+pipeline {
+    **agent { label 'dev'}**
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+}
+```
