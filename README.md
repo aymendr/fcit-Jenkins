@@ -341,3 +341,18 @@ pipeline {
     }
 }
 ```
+## Deploiement avec Ansible
+- Installer ansible sur votre serveur jenkins
+- partager les clés ssh avec les workers depuis votre machine jenkins
+- Utiliser le repo https://github.com/aymendr/ansible-jenkins/tree/master pour une pipeline de ce type:
+```
+node{
+    stage('Clone') {
+        git 'https://github.com/aymendr/ansible-jenkins.git'
+    }
+    
+    stage('Ansible'){
+        sh 'ansible-playbook -i hosts playbook.yml'
+    }
+}
+```
