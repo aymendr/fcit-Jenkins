@@ -311,3 +311,18 @@ node{
 ```docker rm -vf $(docker ps -aq)```
 - To delete all the images:
 ```docker rmi -f $(docker images -aq)```
+## Add SSH agent to Jenkins
+- Install **SSH Agent** plugin
+- Manage Jenkins > Nodes > New Node
+![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/ac70d215-69bc-4c05-8dd7-682d8817c99c)
+- Fill in **Name** , Number of executors, remote root directory, labels
+- For Launch method >  Launch agents via SSH
+- Fill in Host (agent ip)
+- For Credentials, click on Add > Kind (SSH Username with private Key), fill in ID, Description and Username (username with which you will connect to the agent)
+- For Private Key, tick the Enter directly
+- Generate a key pair on agent machine and paste the private key in the Key field
+- Add the public key in ~/.ssh/authorized_keys on the agent machine
+- Select the credential created in the Node configuration
+- choose for **Host Key Verification Strategy** > Non verifying Verification Strategy
+- Save
+- Click on Relaunch agent to get the agent connected
