@@ -356,3 +356,16 @@ node{
     }
 }
 ```
+### Passage de paramètres à Ansible
+- Déclarer les paramètres dans la config du pipeline et mettre le code suivant dans le script:
+```
+node{
+    stage('Clone') {
+        git 'https://github.com/aymendr/ansible-jenkins.git'
+    }
+    
+    stage('Ansible'){
+        sh 'ansible-playbook -i hosts_jenkins -e "mavariable=\'$MAVARIABLE\'" playbook.yml --limit $HOST'
+    }
+}
+```
