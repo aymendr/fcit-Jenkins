@@ -270,8 +270,8 @@ node{
 pipeline code :
 ```
 node{
-    def registryProject='registry.gitlab.com/driraaymen/presentation_jenkins'
-    def IMAGE="${registryProject}:warTest-$BUILD_ID"
+    def registryProject='registry.gitlab.com/driraaymen/presentation_jenkins/wartest'
+    def IMAGE="${registryProject}:version-$BUILD_ID"
     stage('Clone') {
         git 'https://github.com/aymendr/war-build-docker.git'
     }
@@ -298,7 +298,6 @@ node{
     
     stage('Build - Push') {
         docker.withRegistry('https://registry.gitlab.com', 'gitlab_credentials') {
-            img.push 'latest'
             img.push()
         }        
     }
