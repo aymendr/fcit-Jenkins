@@ -369,3 +369,28 @@ node{
     }
 }
 ```
+### Push on registry
+```
+node{
+
+    stage('Clone') {
+        git 'https://github.com/aymendr/jenkins-build-docker.git'
+    }
+
+    def img = stage('Build image') {
+        docker.build("registry.gitlab.com/driraaymen/presentation_jenkins:nginx-$BUILD_ID")
+    }
+    
+    stage('Test'){
+        img.withRun("--name nginx-$BUILD_ID -p 80:80"){
+            sh 'curl localhost'
+        }
+    }
+    
+    stage('Build - Push') {
+        docker.withRegistry('https://registry.gitlab.com', 'gitlab_credentials') {
+            img.push()
+        }        
+    }
+}
+```
