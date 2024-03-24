@@ -394,3 +394,52 @@ node{
     }
 }
 ```
+## Compilation War
+- Create a pipeline and put one parameter:
+![image](https://github.com/aymendr/fcit-Jenkins/assets/1395829/27a8d3a3-a90f-410d-8b7c-e606d23b4d1b)
+- Put following script in pipeline code:
+```
+node{
+
+    def registryProject='registry.gitlab.com/driraaymen/presentation_jenkins/wartest'
+    def IMAGE="${registryProject}:hello-$BUILD_ID"
+    stage('Clone War App') {
+        git 'https://github.com/aymendr/war-build-docker.git'
+    }
+    
+    stage('Build - Maven package'){
+        withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'maven', mavenSettingsConfig: '', traceability: true) {
+            sh 'mvn clean package'
+        }
+    }
+    
+    def img = stage('Build image') {
+        docker.build("$IMAGE")
+    }
+    
+    
+    stage('Test'){
+        img.withRun("--name run-$BUILD_ID -p 8081:8080"){
+            sh 'docker ps'
+            sh 'sleep 15s'
+            sh 'curl localhost:8081'
+            sh 'docker ps'
+        }
+    }
+    
+    stage('Build - Push') {
+        docker.withRegistry('https://registry.gitlab.com', 'gitlab_credentials') {
+            img.push()
+        }        
+    }
+
+    stage('Clone Ansible playbook') {
+        git 'https://github.com/aymendr/jenkins-ansible-docker.git'
+    }
+    stage('Ansible - Deploy'){
+        sh 'ansible-galaxy collection install community.docker'
+        sh "ansible-playbook -i hosts -e 'image=$IMAGE' playbook.yml --limit $HOST --vault-password-file=vault_pass"
+    }
+    
+}
+```
