@@ -59,6 +59,7 @@ link : https://www.youtube.com/watch?v=LwwWc7eoLk4
 - Safe restart : ``` java -jar jenkins-cli.jar -s http://localhost:8080/ -auth admin:111d60c3242e1557859e1c6b9277889e23 safe-restart ```
 
 ## Atlassian JIRA
+- Install **Jira** plugin
 - JIRA website : https://www.atlassian.com/
 - create an account and log in
 - Create JIRA Cloud Token : https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/
